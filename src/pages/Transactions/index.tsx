@@ -4,7 +4,7 @@ import { PriceHighlight, TransactionsTable } from './styles';
 import { TransactionsContainer } from './styles';
 import { SearchForm } from './components/SearchForm';
 import { useContext } from "react";
-import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { TransactionsContext } from '../../contexts/TransactionsContext/context';
 
 
 export function Transactions () {
