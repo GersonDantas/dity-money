@@ -23,6 +23,14 @@
       "category": "Educação",
       "price": 1980,
       "createdAt": "2024-12-24T14:22:53.251Z"
+    },
+    {
+      "description": "salgado",
+      "price": "4",
+      "category": "comida",
+      "type": "outcome",
+      "createdAt": "2024-12-24T21:34:00.812Z",
+      "id": 4
     }
   ]
 }

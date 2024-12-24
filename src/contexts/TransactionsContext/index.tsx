@@ -11,6 +11,13 @@ export interface Transaction {
   createdAt: string;
 }
 
+export type CreateTransactionInput = {
+  description: string;
+  price: number;
+  category: string;
+  type: 'income' | 'outcome';
+};
+
 interface TransactionsProviderProps {
   children: React.ReactNode;
 }
@@ -32,8 +39,22 @@ export function TransactionsProvider({children}: TransactionsProviderProps) {
     fetchTransactions()
   }, [])
 
+  async function createTransaction ({ description, price, category, type }: CreateTransactionInput) {
+    console.log("🚀 ~ createTransaction ~ description:", description)
+    
+    const response = await api.post('transactions', {
+      description,
+      price,
+      category,
+      type,
+      createdAt: new Date()
+    })
+
+    setTransactions(state => [response.data, ...state])
+  }
+
   return (
-    <TransactionsContext.Provider value={{transactions, fetchTransactions}}>
+    <TransactionsContext.Provider value={{transactions, fetchTransactions, createTransaction}}>
       {children}
     </TransactionsContext.Provider>
   )
