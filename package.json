@@ -9,7 +9,7 @@
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "preview": "vite preview",
-    "server": "json-server --watch db.json --port 3333"
+    "server": "json-server --watch server.json --port 3333 --delay 500"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
